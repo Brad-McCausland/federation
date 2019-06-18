@@ -2,9 +2,10 @@
 // You can write your code in this editor
 
 // Follow path
-if (ds_list_size(path) != 0)
+if (!is_string(path) && ds_list_size(path) != 0)
 {
 	var coord = path[| 0];
+	coord = scr_grid_to_pixels(coord[0], coord[1])
 	var gotoX = coord[0];
 	var gotoY = coord[1];
 	
@@ -13,8 +14,6 @@ if (ds_list_size(path) != 0)
 		// Pop
 		ds_list_delete(path, 0);
 		speed = 0;
-		show_debug_message("Popped list");
-		show_debug_message(string(ds_list_size(path)));
 	}
 	else
 	{

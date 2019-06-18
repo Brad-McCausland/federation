@@ -12,3 +12,7 @@ var path = ds_list_create()
 if (argument_count > 2) {
 	adjacent = argument2;
 }
+
+// Copy of game board. Will be shared by all recursive instances of breadth first search to keep track of visited tiles
+var marked_board = global.board_array
+
