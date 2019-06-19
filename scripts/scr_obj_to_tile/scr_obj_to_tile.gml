@@ -1,5 +1,7 @@
+// @Description Returns the grid coordinates of the object given as an input
+
 var object = argument0;
 
-var coords = scr_pixels_to_grid(object.x, object.y);
+var coords = scr_pixels_to_grid([object.x, object.y]);
 
-return [coords[0], coords[1]];
+return coords

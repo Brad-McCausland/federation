@@ -5,7 +5,7 @@
 if (!is_string(path) && ds_list_size(path) != 0)
 {
 	var coord = path[| 0];
-	coord = scr_grid_to_pixels(coord[0], coord[1])
+	coord = scr_grid_to_pixels(coord)
 	var gotoX = coord[0];
 	var gotoY = coord[1];
 	

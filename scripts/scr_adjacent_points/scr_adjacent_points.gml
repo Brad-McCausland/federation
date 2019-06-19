@@ -5,24 +5,24 @@ var point = argument0
 var pointList = ds_queue_create();
 
 var up = [point[0], point[1] - 1];
-var down = [point[0] - 1, point[1]];
-var left = [point[0], point[1] + 1];
+var down = [point[0], point[1] + 1];
+var left = [point[0] - 1, point[1]];
 var right = [point[0] + 1, point[1]];
 
 // Omit points that are outside the gameboard
-if (up[1] >= 0)
+if (scr_is_in_bounds(up))
 {
 	ds_queue_enqueue(pointList, up);
 }
-if (left[0] >= 0)
+if (scr_is_in_bounds(left))
 {
 	ds_queue_enqueue(pointList, left);
 }
-if (down[1] < global.boardYLen)
+if (scr_is_in_bounds(down))
 {
 	ds_queue_enqueue(pointList, down);
 }
-if (right[0] < global.boardXLen)
+if (scr_is_in_bounds(right))
 {
 	ds_queue_enqueue(pointList, right);
 }

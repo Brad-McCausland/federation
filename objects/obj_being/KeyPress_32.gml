@@ -7,7 +7,7 @@ var temp_path = scr_breadth_first_search(self, Obj_TestObject);
 for (i = 0; i < ds_list_size(temp_path); i++)
 {
 	var vertex = temp_path[| i];
-	vertex = scr_grid_to_pixels(vertex[0], vertex[1]);
+	vertex = scr_grid_to_pixels(vertex);
 	xcoord = vertex[0];
 	ycoord = vertex[1];
 	if (global.DEBUG)

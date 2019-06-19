@@ -1,6 +1,16 @@
 /// @Description Converts pixel coords into gameboard coords
 
-var X = argument0
-var Y = argument1
+var input = argument0;
 
-return [X div global.GRID_SIZE, Y div global.GRID_SIZE];
+// Convert point struct
+if (is_array(input))
+{
+	var xx = input[0]
+	var yy = input[1]
+	return [xx div global.GRID_SIZE, yy div global.GRID_SIZE];
+}
+// Convert single number
+else
+{
+	return input div global.GRID_SIZE;
+}
